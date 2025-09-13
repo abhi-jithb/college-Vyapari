@@ -2,16 +2,15 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
-// Your Firebase configuration
-// Replace these with your actual Firebase project configuration
+// Firebase configuration from environment variables
 const firebaseConfig = {
-    apiKey: "AIzaSyCkhkllvFJ0Uw6wErb8XdU4FFir2Vzdws8",
-    authDomain: "collegevyapari.firebaseapp.com",
-    projectId: "collegevyapari",
-    storageBucket: "collegevyapari.firebasestorage.app",
-    messagingSenderId: "321846951816",
-    appId: "1:321846951816:web:e338f4a95da1d0a86f443d",
-    measurementId: "G-7WF2Z3WC4C"
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_FIREBASE_APP_ID,
+    measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
